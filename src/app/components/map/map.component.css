@@ -1,0 +1,230 @@
+.sidebar-wrapper {
+  background: linear-gradient(90deg, rgba(117,102,70,1) 0%, rgba(171,148,102,1) 33%, rgba(171,148,102,1) 66%, rgba(117,102,70,1) 100%);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.8);
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.map-container {
+  margin: 0;
+  min-height: calc(100vh - 56px);
+}
+
+.map-container > .col {
+  padding: 0;
+}
+
+.map-wrapper {
+  height: calc(100vh - 56px);
+  width: calc(100vw - 300px);
+  overflow: auto;
+  cursor: url('src/assets/cursors/normal.cur'), auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.world-map-img {
+  background: url("src/assets/images/maps/world-map.jpg"), rgba(0, 0, 0, 0.4);
+  background-blend-mode: darken;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 767.98px) {
+  .sidebar-wrapper {
+    display: none;
+  }
+
+  .map-wrapper {
+    width: 100vw;
+  }
+
+  .map-breadcrumb {
+    display: none;
+  }
+}
+
+.world-location-wrapper {
+  position: absolute;
+}
+
+.world-location-wrapper > h5 {
+  font-family: Amiri, serif;
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  text-align: center;
+  color: #211600;
+  text-shadow: 0 0 3px #f3f0c5;
+  font-weight: bold;
+  word-break: keep-all;
+  font-size: medium;
+}
+
+.world-location-image {
+  width: 100%;
+  height: 100%;
+}
+
+.world-tooltip .tooltip-inner {
+  padding: 0;
+  border-radius: 0;
+  max-width: 250px;
+  width: 250px;
+  box-shadow: 0 0 1px 1px black;
+}
+
+.tooltip-inner {
+  background-color: #1d1f29;
+}
+
+.tooltip-png-txt {
+  font-size: smaller;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-shadow: 0 0 3px black, 0 0 5px black, 0 0 1px black;
+}
+
+.world-tooltip .arrow::before {
+  opacity: 0;
+}
+
+.return-button {
+  background-image: url('src/assets/images/buttons/Btn_Back_Normal.png');
+  background-size: contain;
+  width: 56px;
+  height: 56px;
+
+  position: absolute;
+  top: -28px;
+  left: -28px;
+}
+
+.return-button:hover {
+  background-image: url('src/assets/images/buttons/Btn_Back_Hover.png');
+}
+
+.return-button:active {
+  background-image: url('src/assets/images/buttons/Btn_Back_Push.png');
+}
+
+.map-breadcrumb {
+  position: absolute;
+  width: 100%;
+  max-width: 337px;
+  height: 62px;
+  right: 300px;
+}
+
+.map-breadcrumb-bg {
+  background-image: url('src/assets/images/bg/Bg_Dqdt_BT.png');
+  height: 62px;
+  background-repeat: no-repeat;
+}
+
+.map-breadcrumb-text {
+  position: absolute;
+  left: 70px;
+  top: 17px;
+  color: navajowhite;
+  font-size: smaller;
+}
+
+.placement-tutorial {
+  color: navajowhite;
+  text-shadow: 0 0 2px #c8aa7f;
+}
+
+.marker-icon {
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: -10px;
+}
+.hunt-hard-icon, .hunt-easy-icon, .hunt-medium-icon, .dungeon-icon {
+  width: 40px;
+  height: 40px;
+  top:-20px;
+  left:-20px;
+}
+.selected-marker-icon {
+  width: 48px;
+  height: 48px;
+  top:-24px;
+  left:-24px;
+}
+
+#placementCircle {
+  display: none;
+  z-index: 1200;
+}
+
+.placement-circle-wrapper {
+  width: 140px;
+  height: 140px;
+}
+
+.placement-circle {
+  background-image: url('src/assets/images/marker/Btn_Get_Disable.png');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.circle-icon {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+}
+
+.submap-picker {
+  position: absolute;
+  width: 100%;
+  max-width: 312px;
+  height: 62px;
+  right: 300px;
+  top: 200px;
+}
+
+
+.submap-element {
+  background-image: url('src/assets/images/bg/bg_submap_normal.png');
+  height: 42px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-repeat: no-repeat;
+}
+.submap-element:hover {
+  background-image: url('src/assets/images/bg/bg_submap_hover.png');
+}
+.submap-element:active {
+  background-image: url('src/assets/images/bg/bg_submap_push.png');
+}
+
+.submap-element-current {
+  background-image: url('src/assets/images/bg/bg_submap_current_normal.png');
+  height: 42px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-repeat: no-repeat;
+}
+.submap-element-current:hover {
+  background-image: url('src/assets/images/bg/bg_submap_current_hover.png');
+}
+.submap-element-current:active {
+  background-image: url('src/assets/images/bg/bg_submap_current_push.png');
+}
+
+.submap-element > h5, .submap-element-current > h5 {
+  font-family: Amiri, serif;
+  text-align: center;
+  color: #ffdd9c;
+  text-shadow: 0 0 3px #f3f0c5;
+  font-weight: bold;
+  word-break: keep-all;
+  font-size: large;
+}

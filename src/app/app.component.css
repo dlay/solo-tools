@@ -1,0 +1,90 @@
+header {
+  margin-bottom: 56px;
+}
+
+.avatar-sm {
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatar-user {
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.navbar {
+  background-color: #373b4f !important;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+.user-tooltip .tooltip-inner {
+  padding: 8px;
+  border-radius: 0;
+  max-width: 266px;
+  width: 266px;
+  box-shadow: 0 0 1px 1px black;
+}
+
+.tooltip-inner {
+  background-color: #1d1f29;
+}
+
+.user-tooltip .arrow::before {
+  opacity: 0;
+}
+
+/*.wrapper .row .page {
+  padding: 0;
+}
+
+.wrapper .row .sidebar {
+  padding: 10px;
+}
+
+.wrapper .row {
+  margin: 0;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.nav-wrapper {
+  padding: 0;
+  box-shadow: 0px 0px 4px 2px #454545;
+  z-index: 999;
+}
+
+.site-header {
+  background-color: rgba(0, 0, 0, .85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+  color: #999;
+  transition: ease-in-out color .15s;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar {
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(171,148,102,1) 100%);
+}*/

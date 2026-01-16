@@ -1,0 +1,245 @@
+.sidebar {
+  padding: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 56px);
+}
+
+.col {
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.sidebar-title {
+  background-image: url('src/assets/images/bg/Bg_SkillGuide_Normal.png');
+  background-size: contain;
+  height: 47px;
+  border-bottom: 1px black solid;
+  border-top: 1px black solid;
+  margin: 0 !important;
+  margin-top: 1rem !important;
+}
+
+.icon-title { background-image: url('src/assets/images/buttons/Button_LargeMap_Normal.png'); }
+.icon-gather { background-image: url('src/assets/images/icons/PartyIcon_Develop_Hover.png'); }
+.icon-fish { background-image: url('src/assets/images/icons/PartyIcon_Fish_Hover.png'); }
+.icon-monster { background-image: url('src/assets/images/icons/PartyIcon_Killing_Hover.png'); }
+.icon-collectible { background-image: url('src/assets/images/icons/PartyIcon_Collection_Hover.png'); }
+.icon-animal { background-image: url('src/assets/images/icons/PartyIcon_TreasureTrove_Hover.png'); }
+.icon-poi { background-image: url('src/assets/images/icons/PartyIcon_Common_Hover.png'); }
+.icon-dungeon { background-image: url('src/assets/images/marker/Duplicate_Normal.png'); }
+.icon-hunt { background-image: url('src/assets/images/marker/CYJL02_00006.png'); }
+
+.sidebar-title > .icon {
+  background-size: cover;
+  width: 45px;
+  max-width: 45px;
+  height: 45px;
+  margin-left: 0.3rem !important;
+}
+
+.sidebar-title-text {
+  font-family: Batang, sans-serif;
+  color: #f3f0c5;
+  margin: .4rem !important;
+}
+
+.sidebar-disabled {
+  background-color: black;
+}
+
+.selected-marker {
+  width: 46px;
+  height: 46px;
+  position: absolute;
+}
+
+.selected-marker-title {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.selected-marker-gather {
+  background-image: url('src/assets/images/icons/PartyIcon_Develop_Push.png');
+}
+.selected-marker-fish {
+  background-image: url('src/assets/images/icons/PartyIcon_Fish_Push.png');
+}
+.selected-marker-monster {
+  background-image: url('src/assets/images/icons/PartyIcon_Killing_Push.png');
+}
+.selected-marker-collectible {
+  background-image: url('src/assets/images/icons/PartyIcon_Collection_Push.png');
+}
+.selected-marker-treasure {
+  background-image: url('src/assets/images/icons/PartyIcon_TreasureTrove_Push.png');
+}
+.selected-marker-poi {
+  background-image: url('src/assets/images/icons/PartyIcon_Common_Push.png');
+}
+
+.edit-description {
+  position: absolute;
+  right: 10px;
+}
+
+.edit-description:hover {
+  color: #5b5b5b;
+}
+
+.filter > div {
+  position: relative;
+}
+
+.filter-check-input {
+  display: none;
+}
+
+.filter-check {
+  background-image: url('src/assets/images/buttons/CheckBox_Empty_Normal.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  padding-left: 24px;
+  margin: 3px;
+  width: 300px;
+  height: 18px;
+  z-index: 100;
+  cursor: url('src/assets/cursors/normal.cur'), auto;
+}
+.filter-check:hover {
+  background-image: url('src/assets/images/buttons/CheckBox_Empty_Hover.png');
+}
+.filter-check:active {
+  background-image: url('src/assets/images/buttons/CheckBox_Empty_Push.png');
+}
+
+.filter-check-input:checked + .filter-check {
+  background-image: url('src/assets/images/buttons/CheckBox_Normal.png');
+}
+.filter-check-input:checked + .filter-check:hover {
+  background-image: url('src/assets/images/buttons/CheckBox_Hover.png');
+}
+.filter-check-input:checked + .filter-check:active {
+  background-image: url('src/assets/images/buttons/CheckBox_Push.png');
+}
+
+.filter-name {
+  position: absolute;
+  left: 28px;
+  text-shadow: 0 0 2px #f3f0c5;
+  font-weight: bold;
+}
+
+.filter-icon {
+  background-size: contain;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 24px;
+  height: 24px;
+}
+
+.filter-icon-dungeon { background-image: url('src/assets/images/marker/Duplicate_Normal.png'); }
+.filter-icon-fish { background-image: url('src/assets/images/marker/fish_icon.png'); }
+.filter-icon-collectible { background-image: url('src/assets/images/marker/collectible_icon.png'); }
+.filter-icon-treasure { background-image: url('src/assets/images/marker/treasure_icon.png'); }
+.filter-icon-monster { background-image: url('src/assets/images/marker/monster_icon.png'); }
+.filter-icon-hunt { background-image: url('src/assets/images/marker/CYJL02_00006.png'); }
+.filter-icon-poi { background-image: url('src/assets/images/marker/poi_icon.png'); }
+
+.hc_001-icon { background-image: url('src/assets/images/marker/hc_001_icon.png'); }
+.hc_002-icon { background-image: url('src/assets/images/marker/hc_002_icon.png'); }
+.hc_003-icon { background-image: url('src/assets/images/marker/hc_003_icon.png'); }
+.hc_004-icon { background-image: url('src/assets/images/marker/hc_004_icon.png'); }
+.hc_005-icon { background-image: url('src/assets/images/marker/hc_005_icon.png'); }
+.hc_006-icon { background-image: url('src/assets/images/marker/hc_006_icon.png'); }
+.hc_007-icon { background-image: url('src/assets/images/marker/hc_007_icon.png'); }
+.hc_008-icon { background-image: url('src/assets/images/marker/hc_008_icon.png'); }
+.hc_009-icon { background-image: url('src/assets/images/marker/hc_009_icon.png'); }
+.hc_010-icon { background-image: url('src/assets/images/marker/hc_010_icon.png'); }
+.hc_011-icon { background-image: url('src/assets/images/marker/hc_011_icon.png'); }
+.hc_012-icon { background-image: url('src/assets/images/marker/hc_012_icon.png'); }
+.hc_013-icon { background-image: url('src/assets/images/marker/hc_013_icon.png'); }
+.hc_014-icon { background-image: url('src/assets/images/marker/hc_014_icon.png'); }
+.hc_015-icon { background-image: url('src/assets/images/marker/hc_015_icon.png'); }
+.hc_016-icon { background-image: url('src/assets/images/marker/hc_016_icon.png'); }
+.hc_017-icon { background-image: url('src/assets/images/marker/hc_017_icon.png'); }
+.hc_018-icon { background-image: url('src/assets/images/marker/hc_018_icon.png'); }
+.hc_019-icon { background-image: url('src/assets/images/marker/hc_019_icon.png'); }
+.hc_020-icon { background-image: url('src/assets/images/marker/hc_020_icon.png'); }
+.hc_021-icon { background-image: url('src/assets/images/marker/hc_021_icon.png'); }
+.hc_022-icon { background-image: url('src/assets/images/marker/hc_022_icon.png'); }
+.hc_023-icon { background-image: url('src/assets/images/marker/hc_023_icon.png'); }
+.hc_024-icon { background-image: url('src/assets/images/marker/hc_024_icon.png'); }
+.hc_025-icon { background-image: url('src/assets/images/marker/hc_025_icon.png'); }
+.hc_026-icon { background-image: url('src/assets/images/marker/hc_026_icon.png'); }
+.hc_027-icon { background-image: url('src/assets/images/marker/hc_027_icon.png'); }
+.hc_028-icon { background-image: url('src/assets/images/marker/hc_028_icon.png'); }
+.hc_029-icon { background-image: url('src/assets/images/marker/hc_029_icon.png'); }
+.hc_030-icon { background-image: url('src/assets/images/marker/hc_030_icon.png'); }
+.hc_031-icon { background-image: url('src/assets/images/marker/hc_031_icon.png'); }
+.hc_032-icon { background-image: url('src/assets/images/marker/hc_032_icon.png'); }
+.hc_033-icon { background-image: url('src/assets/images/marker/hc_033_icon.png'); }
+.hc_034-icon { background-image: url('src/assets/images/marker/hc_034_icon.png'); }
+.hc_035-icon { background-image: url('src/assets/images/marker/hc_035_icon.png'); }
+.hc_036-icon { background-image: url('src/assets/images/marker/hc_036_icon.png'); }
+.hc_037-icon { background-image: url('src/assets/images/marker/hc_037_icon.png'); }
+
+.gather-content-bg {
+  background-image: url('src/assets/images/manufacture/Bg_FightTimeNumber.png');
+  background-size: contain;
+  height: 100px;
+  max-width: 100px;
+  position: absolute;
+}
+
+.gather-content-img {
+  background-size: contain;
+  height: 100px;
+  max-width: 100px;
+}
+
+.gather-content-placeholder {
+  background-image: url('src/assets/images/manufacture/qmark.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  max-width: 56px;
+  margin: 0 22px;
+}
+
+.gather-content-btn {
+  width: 100%;
+  margin: 3px;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
+
+.gather-content-btn:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.gather-content-btn:active {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.gather-content-btn > div {
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0;
+  height: 28px;
+}
+
+.gather-content-btn > span {
+  position: absolute;
+  left: 35px;
+  top: 0;
+  font-weight: bold;
+  text-shadow: 0 0 1px #f3f0c5;
+}

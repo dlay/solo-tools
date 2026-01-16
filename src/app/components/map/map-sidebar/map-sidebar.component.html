@@ -1,0 +1,287 @@
+<div class="sidebar" [ngClass]="{ 'sidebar-disabled': placementMode }">
+  <div class="sidebar-title row">
+    <div class="icon icon-title col"></div>
+    <div class="col"><h4 class="sidebar-title-text">Interactive Map</h4></div>
+  </div>
+  <div *ngIf="placementPossible" class="filter mt-2 mb-2">
+    <div class="row">
+      <input type="checkbox" id="displayAll" class="filter-check-input" [(ngModel)]="displayAllMarkers" (ngModelChange)="checkAllMarkers()">
+      <label for="displayAll" class="filter-check"></label>
+      <span class="filter-name select-none">Display all markers</span>
+    </div>
+    <div class="row">
+      <input type="checkbox" id="displayGold" class="filter-check-input" [(ngModel)]="displayGoldMarkers" (ngModelChange)="checkGoldMarkers()">
+      <label for="displayGold" class="filter-check"></label>
+      <span class="filter-name select-none">Only golden markers</span>
+    </div>
+    <div class="mb-2" style="width: 240px; margin-left: 30px; margin-right: 30px; height: 1px; background-color: rgba(0, 0, 0, 0.6)"></div>
+    <div class="row">
+      <input type="checkbox" id="dungeons" class="filter-check-input" [(ngModel)]="filter['dungeon']" (click)="filterClicked()">
+      <label for="dungeons" class="filter-check"></label>
+      <span class="filter-icon filter-icon-dungeon"></span>
+      <span class="filter-name select-none">Dungeons</span>
+    </div>
+    <div style="width: 240px; margin-left: 30px; margin-right: 30px; height: 1px; background-color: rgba(0, 0, 0, 0.3)"></div>
+    <div class="row">
+      <input type="checkbox" id="hunt" class="filter-check-input" [(ngModel)]="filter['hunt']" (click)="filterClicked()">
+      <label for="hunt" class="filter-check"></label>
+      <span class="filter-icon filter-icon-hunt"></span>
+      <span class="filter-name select-none">Hunts</span>
+    </div>
+    <!--<div style="width: 240px; margin-left: 30px; margin-right: 30px; height: 1px; background-color: rgba(0, 0, 0, 0.3)"></div>
+    <div class="row">
+      <input type="checkbox" id="fish" class="filter-check-input" [(ngModel)]="filter['fish']" (click)="filterClicked()">
+      <label for="fish" class="filter-check"></label>
+      <span class="filter-icon filter-icon-fish"></span>
+      <span class="filter-name select-none">Fish</span>
+    </div>-->
+    <div style="width: 240px; margin-left: 30px; margin-right: 30px; height: 1px; background-color: rgba(0, 0, 0, 0.3)"></div>
+    <div class="row">
+      <input type="checkbox" id="collectible" class="filter-check-input" [(ngModel)]="filter['collectible']" (click)="filterClicked()">
+      <label for="collectible" class="filter-check"></label>
+      <span class="filter-icon filter-icon-collectible"></span>
+      <span class="filter-name select-none">Collectibles</span>
+    </div>
+    <div style="width: 240px; margin-left: 30px; margin-right: 30px; height: 1px; background-color: rgba(0, 0, 0, 0.3)"></div>
+    <div class="row">
+      <input type="checkbox" id="treasure" class="filter-check-input" [(ngModel)]="filter['treasure']" (click)="filterClicked()">
+      <label for="treasure" class="filter-check"></label>
+      <span class="filter-icon filter-icon-treasure"></span>
+      <span class="filter-name select-none">Animals</span>
+    </div>
+    <div style="width: 240px; margin-left: 30px; margin-right: 30px; height: 1px; background-color: rgba(0, 0, 0, 0.3)"></div>
+    <div class="row">
+      <input type="checkbox" id="monster" class="filter-check-input" [(ngModel)]="filter['monster']" (click)="filterClicked()">
+      <label for="monster" class="filter-check"></label>
+      <span class="filter-icon filter-icon-monster"></span>
+      <span class="filter-name select-none">Monster</span>
+    </div>
+    <div style="width: 240px; margin-left: 30px; margin-right: 30px; height: 1px; background-color: rgba(0, 0, 0, 0.3)"></div>
+    <div class="row">
+      <input type="checkbox" id="poi" class="filter-check-input" [(ngModel)]="filter['poi']" (click)="filterClicked()">
+      <label for="poi" class="filter-check"></label>
+      <span class="filter-icon filter-icon-poi"></span>
+      <span class="filter-name select-none">Points of Interest</span>
+    </div>
+    <div class="mb-2" style="width: 240px; margin-left: 30px; margin-right: 30px; height: 1px; background-color: rgba(0, 0, 0, 0.3)"></div>
+    <div class="row" *ngFor="let fil of filter.gather | keyvalue">
+      <input type="checkbox" [id]="fil.key" class="filter-check-input" [(ngModel)]="fil.value.isShown" (click)="filterClicked()">
+      <label [for]="fil.key" class="filter-check"></label>
+      <span class="filter-icon" [class]="fil.key + '-icon'"></span>
+      <span class="filter-name select-none">{{fil.value.name}}</span>
+      <div style="width: 240px; margin-left: 30px; margin-right: 30px; height: 1px; background-color: rgba(0, 0, 0, 0.3)"></div>
+    </div>
+    <div class="mb-2"></div>
+    <div class="row" *ngFor="let fil of filter.fish | keyvalue">
+      <input type="checkbox" [id]="fil.key" class="filter-check-input" [(ngModel)]="fil.value.isShown" (click)="filterClicked()">
+      <label [for]="fil.key" class="filter-check"></label>
+      <span class="filter-icon" [class]="fil.key + '-icon'"></span>
+      <span class="filter-name select-none">{{fil.value.name}}</span>
+      <div style="width: 240px; margin-left: 30px; margin-right: 30px; height: 1px; background-color: rgba(0, 0, 0, 0.3)"></div>
+    </div>
+  </div>
+
+  <!------ HUNT ------->
+  <div *ngIf="selectedMarker && selectedMarker.type === 'hunt' && selectedMarker.hunt">
+    <div class="sidebar-title row">
+      <div class="icon icon-hunt col"></div>
+      <div class="col"><h4 class="sidebar-title-text">Hunt</h4></div>
+    </div>
+    <div class="row p-2 position-relative" style="min-height: 96px">
+      <div class="col gather-content-bg"></div>
+      <div class="col mt-1" [style.background-image]="'url(assets/images/marker/hunt_medium_icon.png)'" style="background-size: contain; background-repeat: no-repeat; background-position: center; max-width: 100px; height: 50px;">
+        <div class="text-shadow-1" style="text-align: center; width: 100%; position: absolute; bottom: -30px; color: #e0c8b2; font-size: x-large;">
+          {{getHuntSize(selectedMarker.hunt.difficulty)}}</div>
+      </div>
+      <div class="col">
+        <h5 class="mt-4 ml-2">{{selectedMarker.hunt.bossName}}</h5>
+        <h6 class="position-absolute text-shadow-2 ml-2" style="left: 0; top: 0">Reset: <b>{{getResetDay(selectedMarker.hunt.reset)}}</b></h6>
+        <div class="position-absolute" style="background-image: url('assets/images/icons/Img_TeamSword.png'); background-size: contain; background-repeat: no-repeat; width: 45px; height: 27px; top: 0; right: 0; text-align: right; font-weight: bold; color: #c8aa7f; text-shadow: 0 0 2px darkred">
+          {{selectedMarker.hunt.gearScore}}
+        </div>
+      </div>
+    </div>
+    <div style="width: 260px; margin: 20px 20px 5px; height: 1px; background-color: rgba(0, 0, 0, 0.3)"></div>
+    <div class="row pr-2 pl-3">{{selectedMarker.hunt.bossInformation}}</div>
+  </div>
+
+  <!------ DUNGEON ------->
+  <div *ngIf="selectedMarker && selectedMarker.type === 'dungeon' && selectedMarker.dungeon">
+    <div class="sidebar-title row">
+      <div class="icon icon-dungeon col"></div>
+      <div class="col"><h4 class="sidebar-title-text">Dungeon</h4></div>
+    </div>
+    <h5 style="text-align: center; margin-top: 10px; text-shadow: 0 0 2px gray">{{selectedMarker.dungeon.name}}</h5>
+    <!--
+    <div style="background-image: url('assets/images/bg/PIC_d63.png'); background-size: contain; width: 100%; height: 350px; position: relative; margin-top: -40px; margin-bottom: -20px">
+      <div style="background-image: url('assets/images/bg/Ring.png'); background-size: contain; background-repeat: no-repeat; background-position: center; width: 100%; height: 220px; position: absolute; top: 50px; left: 0"></div>
+    </div>
+    -->
+    <div *ngIf="selectedMarker.dungeon.versions.drill" class="row position-relative mb-3">
+      <div class="col" style="background-image: url('assets/images/icons/LimitFrame01.png'); background-size: contain; background-repeat: no-repeat; position: relative; min-width: 100%; height: 100px">
+        <div [style.background-image]="'url(assets/images/icons/Level1_Select.png)'" style="background-size: contain; background-repeat: no-repeat; background-position: center; width: 100%; height: 100px;"></div>
+        <div class="text-shadow-1" style="text-align: center; width: 100%; position: absolute; bottom: 0; color: #efdfc7; font-size: larger; font-weight: bolder; text-shadow: 0 0 5px rgba(48,38,24,0.91)">Drill</div>
+        <h6 class="position-absolute text-shadow-2 ml-2" style="left: 0; top: 0">Reset: <b>{{getResetDay(selectedMarker.dungeon.versions.drill.reset)}}</b></h6>
+        <div class="position-absolute ml-2" style="background-image: url('assets/images/icons/Icon_Role.png'); background-size: contain; background-repeat: no-repeat; background-position: right; width: 70px; height: 24px; bottom: 0; left: 0; font-weight: bold; color: #a0e6ef; text-shadow: 0 0 2px #00648b">
+          {{selectedMarker.dungeon.playerMin}}-{{selectedMarker.dungeon.playerMax}}
+        </div>
+        <div class="position-absolute mr-2" style="background-image: url('assets/images/icons/Icon_KillList.png'); background-size: contain; background-repeat: no-repeat; width: 52px; height: 24px; top: 0; right: 0; text-align: right; font-weight: bold; color: #c8aa7f; text-shadow: 0 0 2px darkred; line-height: 1.5rem">
+          {{selectedMarker.dungeon.versions.drill.gearScore}}
+        </div>
+        <div class="position-absolute mr-2" style="background-image: url('assets/images/icons/Icon_Collection.png'); background-size: contain; background-repeat: no-repeat; width: 52px; height: 24px; bottom: 0; right: 0; text-align: right; font-weight: bold; color: #c4e396; text-shadow: 0 0 2px #4a8b00; line-height: 1.3rem">
+          {{selectedMarker.dungeon.versions.drill.gearScoreLoot}}
+        </div>
+      </div>
+      <div style="background-image: url('assets/images/icons/Img_BigHeaderTip.png'); background-position: center; width: 100%; height: 31px; margin-top: 5px"></div>
+    </div>
+    <div *ngIf="selectedMarker.dungeon.versions.easy" class="row position-relative mb-3">
+      <div class="col" style="background-image: url('assets/images/icons/LimitFrame01.png'); background-size: contain; background-repeat: no-repeat; position: relative; min-width: 100%; height: 100px">
+        <div [style.background-image]="'url(assets/images/icons/Level2_Select.png)'" style="background-size: contain; background-repeat: no-repeat; background-position: center; width: 100%; height: 100px;"></div>
+        <div class="text-shadow-1" style="text-align: center; width: 100%; position: absolute; bottom: 0; color: #efdfc7; font-size: larger; font-weight: bolder; text-shadow: 0 0 5px rgba(48,38,24,0.91)">Easy</div>
+        <h6 class="position-absolute text-shadow-2 ml-2" style="left: 0; top: 0">Reset: <b>{{getResetDay(selectedMarker.dungeon.versions.easy.reset)}}</b></h6>
+        <div class="position-absolute ml-2" style="background-image: url('assets/images/icons/Icon_Role.png'); background-size: contain; background-repeat: no-repeat; background-position: right; width: 70px; height: 24px; bottom: 0; left: 0; font-weight: bold; color: #a0e6ef; text-shadow: 0 0 2px #00648b">
+          {{selectedMarker.dungeon.playerMin}}-{{selectedMarker.dungeon.playerMax}}
+        </div>
+        <div class="position-absolute mr-2" style="background-image: url('assets/images/icons/Icon_KillList.png'); background-size: contain; background-repeat: no-repeat; width: 52px; height: 24px; top: 0; right: 0; text-align: right; font-weight: bold; color: #c8aa7f; text-shadow: 0 0 2px darkred; line-height: 1.5rem">
+          {{selectedMarker.dungeon.versions.easy.gearScore}}
+        </div>
+        <div class="position-absolute mr-2" style="background-image: url('assets/images/icons/Icon_Collection.png'); background-size: contain; background-repeat: no-repeat; width: 52px; height: 24px; bottom: 0; right: 0; text-align: right; font-weight: bold; color: #c4e396; text-shadow: 0 0 2px #4a8b00; line-height: 1.3rem">
+          {{selectedMarker.dungeon.versions.easy.gearScoreLoot}}
+        </div>
+      </div>
+      <div style="background-image: url('assets/images/icons/Img_BigHeaderTip.png'); background-position: center; width: 100%; height: 31px; margin-top: 5px"></div>
+    </div>
+    <div *ngIf="selectedMarker.dungeon.versions.normal" class="row position-relative mb-3">
+      <div class="col" style="background-image: url('assets/images/icons/LimitFrame01.png'); background-size: contain; background-repeat: no-repeat; position: relative; min-width: 100%; height: 100px">
+        <div [style.background-image]="'url(assets/images/icons/Level3_Select.png)'" style="background-size: contain; background-repeat: no-repeat; background-position: center; width: 100%; height: 100px;"></div>
+        <div class="text-shadow-1" style="text-align: center; width: 100%; position: absolute; bottom: 0; color: #efdfc7; font-size: larger; font-weight: bolder; text-shadow: 0 0 5px rgba(48,38,24,0.91)">Normal</div>
+        <h6 class="position-absolute text-shadow-2 ml-2" style="left: 0; top: 0">Reset: <b>{{getResetDay(selectedMarker.dungeon.versions.normal.reset)}}</b></h6>
+        <div class="position-absolute ml-2" style="background-image: url('assets/images/icons/Icon_Role.png'); background-size: contain; background-repeat: no-repeat; background-position: right; width: 70px; height: 24px; bottom: 0; left: 0; font-weight: bold; color: #a0e6ef; text-shadow: 0 0 2px #00648b">
+          {{selectedMarker.dungeon.playerMin}}-{{selectedMarker.dungeon.playerMax}}
+        </div>
+        <div class="position-absolute mr-2" style="background-image: url('assets/images/icons/Icon_KillList.png'); background-size: contain; background-repeat: no-repeat; width: 52px; height: 24px; top: 0; right: 0; text-align: right; font-weight: bold; color: #c8aa7f; text-shadow: 0 0 2px darkred; line-height: 1.5rem">
+          {{selectedMarker.dungeon.versions.normal.gearScore}}
+        </div>
+        <div class="position-absolute mr-2" style="background-image: url('assets/images/icons/Icon_Collection.png'); background-size: contain; background-repeat: no-repeat; width: 52px; height: 24px; bottom: 0; right: 0; text-align: right; font-weight: bold; color: #c4e396; text-shadow: 0 0 2px #4a8b00; line-height: 1.3rem">
+          {{selectedMarker.dungeon.versions.normal.gearScoreLoot}}
+        </div>
+      </div>
+      <div style="background-image: url('assets/images/icons/Img_BigHeaderTip.png'); background-position: center; width: 100%; height: 31px; margin-top: 5px"></div>
+    </div>
+    <div *ngIf="selectedMarker.dungeon.versions.hard" class="row position-relative mb-3">
+      <div class="col" style="background-image: url('assets/images/icons/LimitFrame01.png'); background-size: contain; background-repeat: no-repeat; position: relative; min-width: 100%; height: 100px">
+        <div [style.background-image]="'url(assets/images/icons/Level4_Select.png)'" style="background-size: contain; background-repeat: no-repeat; background-position: center; width: 100%; height: 100px;"></div>
+        <div class="text-shadow-1" style="text-align: center; width: 100%; position: absolute; bottom: 0; color: #efdfc7; font-size: larger; font-weight: bolder; text-shadow: 0 0 5px rgba(48,38,24,0.91)">Hard</div>
+        <h6 class="position-absolute text-shadow-2 ml-2" style="left: 0; top: 0">Reset: <b>{{getResetDay(selectedMarker.dungeon.versions.hard.reset)}}</b></h6>
+        <div class="position-absolute ml-2" style="background-image: url('assets/images/icons/Icon_Role.png'); background-size: contain; background-repeat: no-repeat; background-position: right; width: 70px; height: 24px; bottom: 0; left: 0; font-weight: bold; color: #a0e6ef; text-shadow: 0 0 2px #00648b">
+          {{selectedMarker.dungeon.playerMin}}-{{selectedMarker.dungeon.playerMax}}
+        </div>
+        <div class="position-absolute mr-2" style="background-image: url('assets/images/icons/Icon_KillList.png'); background-size: contain; background-repeat: no-repeat; width: 52px; height: 24px; top: 0; right: 0; text-align: right; font-weight: bold; color: #c8aa7f; text-shadow: 0 0 2px darkred; line-height: 1.5rem">
+          {{selectedMarker.dungeon.versions.hard.gearScore}}
+        </div>
+        <div class="position-absolute mr-2" style="background-image: url('assets/images/icons/Icon_Collection.png'); background-size: contain; background-repeat: no-repeat; width: 52px; height: 24px; bottom: 0; right: 0; text-align: right; font-weight: bold; color: #c4e396; text-shadow: 0 0 2px #4a8b00; line-height: 1.3rem">
+          {{selectedMarker.dungeon.versions.hard.gearScoreLoot}}
+        </div>
+      </div>
+      <div style="background-image: url('assets/images/icons/Img_BigHeaderTip.png'); background-position: center; width: 100%; height: 31px; margin-top: 5px"></div>
+    </div>
+    <div *ngIf="selectedMarker.dungeon.versions.extreme" class="row position-relative mb-3">
+      <div class="col" style="background-image: url('assets/images/icons/LimitFrame01.png'); background-size: contain; background-repeat: no-repeat; position: relative; min-width: 100%; height: 100px">
+        <div [style.background-image]="'url(assets/images/icons/Level5_Select.png)'" style="background-size: contain; background-repeat: no-repeat; background-position: center; width: 100%; height: 100px;"></div>
+        <div class="text-shadow-1" style="text-align: center; width: 100%; position: absolute; bottom: 0; color: #efdfc7; font-size: larger; font-weight: bolder; text-shadow: 0 0 5px rgba(48,38,24,0.91)">Extreme</div>
+        <h6 class="position-absolute text-shadow-2 ml-2" style="left: 0; top: 0">Reset: <b>{{getResetDay(selectedMarker.dungeon.versions.extreme.reset)}}</b></h6>
+        <div class="position-absolute ml-2" style="background-image: url('assets/images/icons/Icon_Role.png'); background-size: contain; background-repeat: no-repeat; background-position: right; width: 70px; height: 24px; bottom: 0; left: 0; font-weight: bold; color: #a0e6ef; text-shadow: 0 0 2px #00648b">
+          {{selectedMarker.dungeon.playerMin}}-{{selectedMarker.dungeon.playerMax}}
+        </div>
+        <div class="position-absolute mr-2" style="background-image: url('assets/images/icons/Icon_KillList.png'); background-size: contain; background-repeat: no-repeat; width: 52px; height: 24px; top: 0; right: 0; text-align: right; font-weight: bold; color: #c8aa7f; text-shadow: 0 0 2px darkred; line-height: 1.5rem">
+          {{selectedMarker.dungeon.versions.extreme.gearScore}}
+        </div>
+        <div class="position-absolute mr-2" style="background-image: url('assets/images/icons/Icon_Collection.png'); background-size: contain; background-repeat: no-repeat; width: 52px; height: 24px; bottom: 0; right: 0; text-align: right; font-weight: bold; color: #c4e396; text-shadow: 0 0 2px #4a8b00; line-height: 1.3rem">
+          {{selectedMarker.dungeon.versions.extreme.gearScoreLoot}}
+        </div>
+      </div>
+      <div style="background-image: url('assets/images/icons/Img_BigHeaderTip.png'); background-position: center; width: 100%; height: 31px; margin-top: 5px"></div>
+    </div>
+  </div>
+
+  <!------ MATERIAL ------->
+  <div *ngIf="selectedMarker && selectedMarker.type === 'gather'">
+    <div class="sidebar-title row">
+      <div class="icon icon-gather col"></div>
+      <div class="col"><h4 class="sidebar-title-text">Crafting Material</h4></div>
+    </div>
+    <div class="row p-2 position-relative">
+      <div class="col gather-content-bg"></div>
+      <div *ngIf="selectedMarker.material" class="col gather-content-img" [style.background-image]="'url(assets/images/manufacture/' + selectedMarker.material + '_003.png)'"></div>
+      <div *ngIf="!selectedMarker.material" class="col gather-content-placeholder"></div>
+      <div class="col">
+        <h4 *ngIf="selectedMarker.material" class="mt-2 ml-2 text-shadow-2">{{getFilterName(selectedMarker.material)}}</h4>
+        <h4 *ngIf="!selectedMarker.material" class="mt-2 ml-2 text-shadow-2">Please set type</h4>
+        <button *ngIf="!editingGatherType && (auth.user$ | async) !== null && (auth.user$ | async)?.permissions > 0" class="btn btn-outline-dark ml-2" (click)="editingGatherType = true">Edit</button>
+      </div>
+    </div>
+    <div class="row" *ngIf="editingGatherType && (auth.user$ | async) !== null && (auth.user$ | async)?.permissions > 0">
+      <div *ngFor="let mat of filter.gather | keyvalue" class="gather-content-btn" (click)="editGatherType(mat.key)">
+        <div [style.background-image]="'url(assets/images/manufacture/' + mat.key + '_003.png)'"></div>
+        <span>{{mat.value.name}}</span>
+      </div>
+    </div>
+    <div class="row">
+
+    </div>
+  </div>
+
+  <!------ FISH ------->
+  <div *ngIf="selectedMarker && selectedMarker.type === 'fish'">
+    <div class="sidebar-title row">
+      <div class="icon icon-fish col"></div>
+      <div class="col"><h4 class="sidebar-title-text">Fish</h4></div>
+    </div>
+    <div class="row p-2 position-relative">
+      <div class="col gather-content-bg"></div>
+      <div *ngIf="selectedMarker.fish" class="col gather-content-img" [style.background-image]="'url(assets/images/fish/' + selectedMarker.fish + '.png)'"></div>
+      <div *ngIf="!selectedMarker.fish" class="col gather-content-placeholder"></div>
+      <div class="col">
+        <h4 *ngIf="selectedMarker.fish" class="mt-2 ml-2 text-shadow-2">{{getFilterName(selectedMarker.fish)}}</h4>
+        <h4 *ngIf="!selectedMarker.fish" class="mt-2 ml-2 text-shadow-2">Please set type</h4>
+        <button *ngIf="!editingGatherType && (auth.user$ | async) !== null && (auth.user$ | async)?.permissions > 0" class="btn btn-outline-dark ml-2" (click)="editingGatherType = true">Edit</button>
+      </div>
+    </div>
+    <div class="row" *ngIf="editingGatherType && (auth.user$ | async) !== null && (auth.user$ | async)?.permissions > 0">
+      <div *ngFor="let mat of filter.fish | keyvalue" class="gather-content-btn" (click)="editFishType(mat.key)">
+        <div [style.background-image]="'url(assets/images/fish/' + mat.key + '.png)'"></div>
+        <span>{{mat.value.name}}</span>
+      </div>
+    </div>
+    <div class="row">
+
+    </div>
+  </div>
+
+
+  <div *ngIf="selectedMarker">
+    <div *ngIf="selectedMarker.type === 'monster' || selectedMarker.type === 'collectible' || selectedMarker.type === 'treasure' || selectedMarker.type === 'poi'" class="sidebar-title row">
+      <div class="icon col" [ngClass]="{
+    'icon-fish': selectedMarker.type === 'fish',
+    'icon-monster': selectedMarker.type === 'monster',
+    'icon-collectible': selectedMarker.type === 'collectible',
+    'icon-animal': selectedMarker.type === 'treasure',
+    'icon-poi': selectedMarker.type === 'poi' }"></div>
+      <div *ngIf="selectedMarker.type === 'fish'" class="col"><h4 class="sidebar-title-text">Fish</h4></div>
+      <div *ngIf="selectedMarker.type === 'monster'" class="col"><h4 class="sidebar-title-text">Monster</h4></div>
+      <div *ngIf="selectedMarker.type === 'collectible'" class="col"><h4 class="sidebar-title-text">Collectible</h4></div>
+      <div *ngIf="selectedMarker.type === 'treasure'" class="col"><h4 class="sidebar-title-text">Animal</h4></div>
+      <div *ngIf="selectedMarker.type === 'poi'" class="col"><h4 class="sidebar-title-text">Point of Interest</h4></div>
+    </div>
+  </div>
+  <div *ngIf="selectedMarker && !selectedMarker.dungeon && !selectedMarker.hunt" class="mt-2">
+    <span class="edit-description" (click)="editDescription()" *ngIf="!isEditDescription && (auth.user$ | async) !== null && (auth.user$ | async)?.permissions > 0">Edit</span>
+    <h5 *ngIf="((auth.user$ | async) !== null && (auth.user$ | async)?.permissions > 0) || selectedMarker.description">Description</h5>
+    <div *ngIf="!isEditDescription">
+      <p>{{selectedMarker.description}}</p>
+    </div>
+    <textarea *ngIf="isEditDescription && (auth.user$ | async) !== null && (auth.user$ | async)?.permissions > 0" style="width: 100%" [(ngModel)]="selectedMarker.description"></textarea>
+    <button *ngIf="isEditDescription && (auth.user$ | async) !== null && (auth.user$ | async)?.permissions > 0" class="btn btn-dark" (click)="saveDescription()">Save</button>
+    <button *ngIf="!isEditDescription && (auth.user$ | async) !== null && (auth.user$ | async)?.permissions > 0" class="btn btn-danger" (click)="deleteMarker()">Delete Marker</button>
+  </div>
+</div>

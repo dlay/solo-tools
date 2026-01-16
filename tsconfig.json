@@ -1,0 +1,30 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": false,
+    "noImplicitThis": true,
+    "preserveConstEnums": true,
+    "strictPropertyInitialization": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "ES6",
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "node_modules/**",
+    "dist/**"
+  ]
+}

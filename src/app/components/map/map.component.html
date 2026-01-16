@@ -1,0 +1,151 @@
+<div id="placementCircle" class="position-absolute">
+  <div class="placement-circle-wrapper">
+    <div class="placement-circle">
+      <div class="gather-icon circle-icon" style="right: 10px; bottom: -18px" (click)="createMarker('gather')"></div>
+      <div class="fish-icon circle-icon" style="left: 10px; top: -18px" (click)="createMarker('fish')"></div>
+      <div class="monster-icon circle-icon" style="left: 10px; bottom: -18px" (click)="createMarker('monster')"></div>
+      <div class="collectible-icon circle-icon" style="right: 10px; top: -18px" (click)="createMarker('collectible')"></div>
+      <div class="treasure-icon circle-icon" style="left: -28px; top: 47px" (click)="createMarker('treasure')"></div>
+      <div class="poi-icon circle-icon" style="right: -28px; top: 47px" (click)="createMarker('poi')"></div>
+      <!--<div class="hunt-icon circle-icon" style="left: 50px; top: 83px" (click)="createMarker('hunt')"></div>
+      <div class="dungeon-icon circle-icon" style="right: 52px; top: 22px" (click)="createMarker('dungeon')"></div>-->
+    </div>
+  </div>
+</div>
+<div class="row map-container">
+  <div class="col map-wrapper" id="map-wrap">
+    <div [ngStyle]="{ 'background-blend-mode': !isMapSelected ? 'darken' : 'normal' }" class="world-map-img" id="world-map">
+      <div *ngIf="!isMapSelected">
+        <div class="world-location-wrapper"
+             *ngFor="let data of mapData"
+             [style.top.%]="data.worldIconPosition.top"
+             [style.left.%]="data.worldIconPosition.left"
+             [style.width.%]="data.worldIconPosition.width"
+             [style.height.%]="data.worldIconPosition.height">
+          <h5 *ngIf="data.showMapName">{{data.displayName}}</h5>
+          <h5 *ngIf="data.showMapName">{{data.displayName}}</h5>
+          <h5 *ngIf="data.showMapName">{{data.displayName}}</h5>
+          <h5 *ngIf="data.showMapName">{{data.displayName}}</h5>
+          <h5 *ngIf="data.showMapName">{{data.displayName}}</h5>
+          <div class="world-location-image">
+            <ng-template #worldTooltip>
+              <div style="width: 250px; padding-bottom: 0.5rem">
+                <div style="background-image: url('assets/images/bg/Bg_Tips_Scene.png'); background-size: contain; background-repeat: no-repeat; width: 100%; height: 52px">
+                  <h6 style="padding-top: 15px; font-size: small; font-weight: bold; color: #211600; text-align: center">{{data.displayName}}</h6>
+                </div>
+
+                <div *ngIf="data.dungeons.length > 0">
+                  <div style="text-align: left; height: 46px">
+                    <img src="assets/images/icons/PartyIcon_Killing_Normal.png" alt="craft_icon" style="position: absolute"/>
+                    <h5 style="padding-left: 50px; padding-top: 15px; font-weight: bold; font-size: smaller">Dungeons & Raids</h5>
+                  </div>
+                  <div style="height: auto">
+                    <div *ngFor="let dungeon of data.dungeons">
+                      <div class="row" style="margin: 0; height: 3rem">
+                        <div class="col-5 small" style="margin: auto 0; padding-bottom: 0.5rem"><b>{{dungeon.name}}</b></div>
+                        <div *ngIf="dungeon.playerCountMin < 10" class="col-2" [style.background-image]="'url(assets/images/icons/Img_Recruit_Instance_Level4.png)'" style="background-size: contain; background-repeat: no-repeat; padding: 0; padding-top: 0.5rem"></div>
+                        <div *ngIf="dungeon.playerCountMin >= 10" class="col-2" [style.background-image]="'url(assets/images/icons/Img_Recruit_Instance_Level5.png)'" style="background-size: contain; background-repeat: no-repeat; padding: 0; padding-top: 0.5rem"></div>
+                        <div class="col-5 small" style="margin: auto 0; padding-bottom: 0.5rem">{{dungeon.playerCountMin}} - {{dungeon.playerCountMax}} Players</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div *ngIf="data.materials.length > 0">
+                  <div style="text-align: left; height: 46px">
+                    <img src="assets/images/icons/PartyIcon_Develop_Normal.png" alt="craft_icon" style="position: absolute"/>
+                    <h5 style="padding-left: 50px; padding-top: 15px; font-weight: bold; font-size: smaller">Crafting Materials</h5>
+                  </div>
+                  <div style="height: auto">
+                    <div *ngFor="let mat of data.materials; let i = index">
+                      <div *ngIf="i % 4 == 0" class="row" style="margin: 0; height: 4rem">
+                        <div class="col-3" [style.background-image]="'url(assets/images/manufacture/' + mat.bigIconUrl + '_003.png)'" style="background-size: contain; background-repeat: no-repeat; padding: 0">
+                          <div class="tooltip-png-txt">{{mat.name}}</div>
+                        </div>
+                        <div *ngIf="i + 1 < data.materials.length" class="col-3" [style.background-image]="'url(assets/images/manufacture/' + data.materials[i + 1].bigIconUrl + '_003.png)'" style="background-size: contain; background-repeat: no-repeat; padding: 0">
+                          <div class="tooltip-png-txt">{{data.materials[i + 1].name}}</div>
+                        </div>
+                        <div *ngIf="i + 2 < data.materials.length" class="col-3" [style.background-image]="'url(assets/images/manufacture/' + data.materials[i + 2].bigIconUrl + '_003.png)'" style="background-size: contain; background-repeat: no-repeat; padding: 0">
+                          <div class="tooltip-png-txt">{{data.materials[i + 2].name}}</div>
+                        </div>
+                        <div *ngIf="i + 3 < data.materials.length" class="col-3" [style.background-image]="'url(assets/images/manufacture/' + data.materials[i + 3].bigIconUrl + '_003.png)'" style="background-size: contain; background-repeat: no-repeat; padding: 0">
+                          <div class="tooltip-png-txt">{{data.materials[i + 3].name}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div *ngIf="data.fish.length > 0">
+                  <div style="text-align: left; height: 46px">
+                    <img src="assets/images/icons/PartyIcon_Fish_Normal.png" alt="fish_icon" style="position: absolute"/>
+                    <h5 style="padding-left: 50px; padding-top: 15px; font-weight: bold; font-size: smaller">Fish</h5>
+                  </div>
+                  <div style="height: auto">
+                    <div *ngFor="let fish of data.fish; let i = index">
+                      <div *ngIf="i % 4 == 0" class="row" style="margin: 0; height: 4rem">
+                        <div class="col-3" [style.background-image]="'url(assets/images/fish/' + fish.bigIconUrl + '.png)'" style="background-size: contain; background-repeat: no-repeat; padding: 0">
+                          <div class="tooltip-png-txt">{{fish.name}}</div>
+                        </div>
+                        <div *ngIf="i + 1 < data.fish.length" class="col-3" [style.background-image]="'url(assets/images/fish/' + data.fish[i + 1].bigIconUrl + '.png)'" style="background-size: contain; background-repeat: no-repeat; padding: 0">
+                          <div class="tooltip-png-txt">{{data.fish[i + 1].name}}</div>
+                        </div>
+                        <div *ngIf="i + 2 < data.fish.length" class="col-3" [style.background-image]="'url(assets/images/fish/' + data.fish[i + 2].bigIconUrl + '.png)'" style="background-size: contain; background-repeat: no-repeat; padding: 0">
+                          <div class="tooltip-png-txt">{{data.fish[i + 2].name}}</div>
+                        </div>
+                        <div *ngIf="i + 3 < data.fish.length" class="col-3" [style.background-image]="'url(assets/images/fish/' + data.fish[i + 3].bigIconUrl + '.png)'" style="background-size: contain; background-repeat: no-repeat; padding: 0">
+                          <div class="tooltip-png-txt">{{data.fish[i + 3].name}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <div [ngClass]="data.worldIconUrl"
+                 [ngbTooltip]="worldTooltip" tooltipClass="world-tooltip" placement="left" (click)="goToMap(data)">
+            </div>
+            <!--<div [ngClass]="data.worldIconUrl"
+                 [ngbTooltip]="worldTooltip" tooltipClass="world-tooltip" placement="left" triggers="click:blur">
+            </div>-->
+          </div>
+        </div>
+      </div>
+      <div *ngIf="isMapSelected && !placementMode">
+        <div *ngFor="let marker of activeMarker"
+             [style.top.%]="marker.position.top * 100"
+             [style.left.%]="marker.position.left * 100" style="position: absolute;">
+          <div [ngClass]="getMarkerClasses(marker)" (click)="markerSelected(marker)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isMapSelected && !placementMode" style="position: absolute; top: 90px; left: 40px">
+    <div class="return-button" (click)="returnToWorldMap()"></div>
+  </div>
+  <div *ngIf="isMapSelected" class="map-breadcrumb">
+    <!--<div style="background-image: url('assets/images/Bg_Recruit_InkTitle.png'); width: 412px; height: 28px; position: relative; top: 13px"></div>
+    <div style="background-image: url('assets/images/misc/Button_LargeMap_Normal.png'); width: 48px; height: 48px; position: absolute; left: 13px; top: 6px"></div>-->
+    <div class="map-breadcrumb-bg"></div>
+    <div class="map-breadcrumb-text text-shadow-2">Current area: {{selectedMap.displayName}}</div>
+  </div>
+  <div *ngIf="isMapSelected && !placementMode && selectedMap?.subMaps.length > 1" class="submap-picker">
+    <div *ngFor="let submap of selectedMap.subMaps; let i = index">
+      <div [ngClass]="selectedSubMap === submap ? 'submap-element-current' : 'submap-element'" (click)="selectSubMap(i)">
+        <h5>{{submap}}</h5>
+      </div>
+    </div>
+  </div>
+  <app-map-sidebar class="col sidebar-wrapper"
+                   (placementModeTriggered)="placementTriggered($event)"
+                   (markerEdit)="markerDataSaved($event)"
+                   (markerDelete)="markerDelete($event)"
+                   (description)="editDescription($event)"
+                   (filterChanged)="filterChanged()"
+                   [placementMode]="placementMode"
+                   [placementPossible]="isMapSelected"
+                   [filter]="markerFilter"
+                   [selectedMarker]="selectedMarker">
+  </app-map-sidebar>
+</div>

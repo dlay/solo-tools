@@ -1,0 +1,1 @@
+zip push.zip -r dist package.json server .ebextensions

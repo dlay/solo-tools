@@ -1,0 +1,361 @@
+.marker-icon {
+  background-size: cover;
+  position: absolute;
+}
+
+.gather-icon { background-image: url('src/assets/images/marker/gather_icon.png'); }
+.gather-icon:hover { background-image: url('src/assets/images/marker/gather_icon_hover.png'); }
+.gather-icon:active { background-image: url('src/assets/images/marker/gather_icon_push.png'); }
+.fish-icon { background-image: url('src/assets/images/marker/fish_icon.png'); }
+.fish-icon:hover { background-image: url('src/assets/images/marker/fish_icon_hover.png'); }
+.fish-icon:active { background-image: url('src/assets/images/marker/fish_icon_push.png'); }
+.monster-icon { background-image: url('src/assets/images/marker/monster_icon.png'); }
+.monster-icon:hover { background-image: url('src/assets/images/marker/monster_icon_hover.png'); }
+.monster-icon:active { background-image: url('src/assets/images/marker/monster_icon_push.png'); }
+.collectible-icon { background-image: url('src/assets/images/marker/collectible_icon.png'); }
+.collectible-icon:hover { background-image: url('src/assets/images/marker/collectible_icon_hover.png'); }
+.collectible-icon:active { background-image: url('src/assets/images/marker/collectible_icon_push.png'); }
+.treasure-icon { background-image: url('src/assets/images/marker/treasure_icon.png'); }
+.treasure-icon:hover { background-image: url('src/assets/images/marker/treasure_icon_hover.png'); }
+.treasure-icon:active { background-image: url('src/assets/images/marker/treasure_icon_push.png'); }
+.poi-icon { background-image: url('src/assets/images/marker/poi_icon.png'); }
+.poi-icon:hover { background-image: url('src/assets/images/marker/poi_icon_hover.png'); }
+.poi-icon:active { background-image: url('src/assets/images/marker/poi_icon_push.png'); }
+
+.hunt-icon { background-image: url('src/assets/images/marker/CYJL02_00006.png'); }
+.dungeon-icon { background-image: url('src/assets/images/marker/Duplicate_Normal.png'); }
+.dungeon-icon:hover { background-image: url('src/assets/images/marker/Duplicate_Hover.png'); }
+.dungeon-icon:active { background-image: url('src/assets/images/marker/Duplicate_Push.png'); }
+.hunt-easy-icon { background-image: url('src/assets/images/marker/hunt_easy_icon.png'); }
+.hunt-easy-icon:hover { background-image: url('src/assets/images/marker/hunt_easy_icon_hover.png'); }
+.hunt-easy-icon:active { background-image: url('src/assets/images/marker/hunt_easy_icon_push.png'); }
+.hunt-medium-icon { background-image: url('src/assets/images/marker/hunt_medium_icon.png'); }
+.hunt-medium-icon:hover { background-image: url('src/assets/images/marker/hunt_medium_icon_hover.png'); }
+.hunt-medium-icon:active { background-image: url('src/assets/images/marker/hunt_medium_icon_push.png'); }
+.hunt-hard-icon { background-image: url('src/assets/images/marker/hunt_hard_icon.png'); }
+.hunt-hard-icon:hover { background-image: url('src/assets/images/marker/hunt_hard_icon_hover.png'); }
+.hunt-hard-icon:active { background-image: url('src/assets/images/marker/hunt_hard_icon_push.png'); }
+
+.hc_001-icon { background-image: url('src/assets/images/marker/hc_001_icon.png'); }
+.hc_001-icon:hover { background-image: url('src/assets/images/marker/hc_001_icon_hover.png'); }
+.hc_001-icon:active { background-image: url('src/assets/images/marker/hc_001_icon_push.png'); }
+.hc_002-icon { background-image: url('src/assets/images/marker/hc_002_icon.png'); }
+.hc_002-icon:hover { background-image: url('src/assets/images/marker/hc_002_icon_hover.png'); }
+.hc_002-icon:active { background-image: url('src/assets/images/marker/hc_002_icon_push.png'); }
+.hc_003-icon { background-image: url('src/assets/images/marker/hc_003_icon.png'); }
+.hc_003-icon:hover { background-image: url('src/assets/images/marker/hc_003_icon_hover.png'); }
+.hc_003-icon:active { background-image: url('src/assets/images/marker/hc_003_icon_push.png'); }
+.hc_004-icon { background-image: url('src/assets/images/marker/hc_004_icon.png'); }
+.hc_004-icon:hover { background-image: url('src/assets/images/marker/hc_004_icon_hover.png'); }
+.hc_004-icon:active { background-image: url('src/assets/images/marker/hc_004_icon_push.png'); }
+.hc_005-icon { background-image: url('src/assets/images/marker/hc_005_icon.png'); }
+.hc_005-icon:hover { background-image: url('src/assets/images/marker/hc_005_icon_hover.png'); }
+.hc_005-icon:active { background-image: url('src/assets/images/marker/hc_005_icon_push.png'); }
+.hc_006-icon { background-image: url('src/assets/images/marker/hc_006_icon.png'); }
+.hc_006-icon:hover { background-image: url('src/assets/images/marker/hc_006_icon_hover.png'); }
+.hc_006-icon:active { background-image: url('src/assets/images/marker/hc_006_icon_push.png'); }
+.hc_007-icon { background-image: url('src/assets/images/marker/hc_007_icon.png'); }
+.hc_007-icon:hover { background-image: url('src/assets/images/marker/hc_007_icon_hover.png'); }
+.hc_007-icon:active { background-image: url('src/assets/images/marker/hc_007_icon_push.png'); }
+.hc_008-icon { background-image: url('src/assets/images/marker/hc_008_icon.png'); }
+.hc_008-icon:hover { background-image: url('src/assets/images/marker/hc_008_icon_hover.png'); }
+.hc_008-icon:active { background-image: url('src/assets/images/marker/hc_008_icon_push.png'); }
+.hc_009-icon { background-image: url('src/assets/images/marker/hc_009_icon.png'); }
+.hc_009-icon:hover { background-image: url('src/assets/images/marker/hc_009_icon_hover.png'); }
+.hc_009-icon:active { background-image: url('src/assets/images/marker/hc_009_icon_push.png'); }
+.hc_010-icon { background-image: url('src/assets/images/marker/hc_010_icon.png'); }
+.hc_010-icon:hover { background-image: url('src/assets/images/marker/hc_010_icon_hover.png'); }
+.hc_010-icon:active { background-image: url('src/assets/images/marker/hc_010_icon_push.png'); }
+.hc_011-icon { background-image: url('src/assets/images/marker/hc_011_icon.png'); }
+.hc_011-icon:hover { background-image: url('src/assets/images/marker/hc_011_icon_hover.png'); }
+.hc_011-icon:active { background-image: url('src/assets/images/marker/hc_011_icon_push.png'); }
+.hc_012-icon { background-image: url('src/assets/images/marker/hc_012_icon.png'); }
+.hc_012-icon:hover { background-image: url('src/assets/images/marker/hc_012_icon_hover.png'); }
+.hc_012-icon:active { background-image: url('src/assets/images/marker/hc_012_icon_push.png'); }
+.hc_013-icon { background-image: url('src/assets/images/marker/hc_013_icon.png'); }
+.hc_013-icon:hover { background-image: url('src/assets/images/marker/hc_013_icon_hover.png'); }
+.hc_013-icon:active { background-image: url('src/assets/images/marker/hc_013_icon_push.png'); }
+.hc_014-icon { background-image: url('src/assets/images/marker/hc_014_icon.png'); }
+.hc_014-icon:hover { background-image: url('src/assets/images/marker/hc_014_icon_hover.png'); }
+.hc_014-icon:active { background-image: url('src/assets/images/marker/hc_014_icon_push.png'); }
+.hc_015-icon { background-image: url('src/assets/images/marker/hc_015_icon.png'); }
+.hc_015-icon:hover { background-image: url('src/assets/images/marker/hc_015_icon_hover.png'); }
+.hc_015-icon:active { background-image: url('src/assets/images/marker/hc_015_icon_push.png'); }
+.hc_016-icon { background-image: url('src/assets/images/marker/hc_016_icon.png'); }
+.hc_016-icon:hover { background-image: url('src/assets/images/marker/hc_016_icon_hover.png'); }
+.hc_016-icon:active { background-image: url('src/assets/images/marker/hc_016_icon_push.png'); }
+.hc_017-icon { background-image: url('src/assets/images/marker/hc_017_icon.png'); }
+.hc_017-icon:hover { background-image: url('src/assets/images/marker/hc_017_icon_hover.png'); }
+.hc_017-icon:active { background-image: url('src/assets/images/marker/hc_017_icon_push.png'); }
+.hc_018-icon { background-image: url('src/assets/images/marker/hc_018_icon.png'); }
+.hc_018-icon:hover { background-image: url('src/assets/images/marker/hc_018_icon_hover.png'); }
+.hc_018-icon:active { background-image: url('src/assets/images/marker/hc_018_icon_push.png'); }
+.hc_019-icon { background-image: url('src/assets/images/marker/hc_019_icon.png'); }
+.hc_019-icon:hover { background-image: url('src/assets/images/marker/hc_019_icon_hover.png'); }
+.hc_019-icon:active { background-image: url('src/assets/images/marker/hc_019_icon_push.png'); }
+.hc_020-icon { background-image: url('src/assets/images/marker/hc_020_icon.png'); }
+.hc_020-icon:hover { background-image: url('src/assets/images/marker/hc_020_icon_hover.png'); }
+.hc_020-icon:active { background-image: url('src/assets/images/marker/hc_020_icon_push.png'); }
+.hc_021-icon { background-image: url('src/assets/images/marker/hc_021_icon.png'); }
+.hc_021-icon:hover { background-image: url('src/assets/images/marker/hc_021_icon_hover.png'); }
+.hc_021-icon:active { background-image: url('src/assets/images/marker/hc_021_icon_push.png'); }
+.hc_022-icon { background-image: url('src/assets/images/marker/hc_022_icon.png'); }
+.hc_022-icon:hover { background-image: url('src/assets/images/marker/hc_022_icon_hover.png'); }
+.hc_022-icon:active { background-image: url('src/assets/images/marker/hc_022_icon_push.png'); }
+.hc_023-icon { background-image: url('src/assets/images/marker/hc_023_icon.png'); }
+.hc_023-icon:hover { background-image: url('src/assets/images/marker/hc_023_icon_hover.png'); }
+.hc_023-icon:active { background-image: url('src/assets/images/marker/hc_023_icon_push.png'); }
+.hc_024-icon { background-image: url('src/assets/images/marker/hc_024_icon.png'); }
+.hc_024-icon:hover { background-image: url('src/assets/images/marker/hc_024_icon_hover.png'); }
+.hc_024-icon:active { background-image: url('src/assets/images/marker/hc_024_icon_push.png'); }
+.hc_025-icon { background-image: url('src/assets/images/marker/hc_025_icon.png'); }
+.hc_025-icon:hover { background-image: url('src/assets/images/marker/hc_025_icon_hover.png'); }
+.hc_025-icon:active { background-image: url('src/assets/images/marker/hc_025_icon_push.png'); }
+.hc_026-icon { background-image: url('src/assets/images/marker/hc_026_icon.png'); }
+.hc_026-icon:hover { background-image: url('src/assets/images/marker/hc_026_icon_hover.png'); }
+.hc_026-icon:active { background-image: url('src/assets/images/marker/hc_026_icon_push.png'); }
+.hc_027-icon { background-image: url('src/assets/images/marker/hc_027_icon.png'); }
+.hc_027-icon:hover { background-image: url('src/assets/images/marker/hc_027_icon_hover.png'); }
+.hc_027-icon:active { background-image: url('src/assets/images/marker/hc_027_icon_push.png'); }
+.hc_028-icon { background-image: url('src/assets/images/marker/hc_028_icon.png'); }
+.hc_028-icon:hover { background-image: url('src/assets/images/marker/hc_028_icon_hover.png'); }
+.hc_028-icon:active { background-image: url('src/assets/images/marker/hc_028_icon_push.png'); }
+.hc_029-icon { background-image: url('src/assets/images/marker/hc_029_icon.png'); }
+.hc_029-icon:hover { background-image: url('src/assets/images/marker/hc_029_icon_hover.png'); }
+.hc_029-icon:active { background-image: url('src/assets/images/marker/hc_029_icon_push.png'); }
+.hc_030-icon { background-image: url('src/assets/images/marker/hc_030_icon.png'); }
+.hc_030-icon:hover { background-image: url('src/assets/images/marker/hc_030_icon_hover.png'); }
+.hc_030-icon:active { background-image: url('src/assets/images/marker/hc_030_icon_push.png'); }
+.hc_031-icon { background-image: url('src/assets/images/marker/hc_031_icon.png'); }
+.hc_031-icon:hover { background-image: url('src/assets/images/marker/hc_031_icon_hover.png'); }
+.hc_031-icon:active { background-image: url('src/assets/images/marker/hc_031_icon_push.png'); }
+.hc_032-icon { background-image: url('src/assets/images/marker/hc_032_icon.png'); }
+.hc_032-icon:hover { background-image: url('src/assets/images/marker/hc_032_icon_hover.png'); }
+.hc_032-icon:active { background-image: url('src/assets/images/marker/hc_032_icon_push.png'); }
+.hc_033-icon { background-image: url('src/assets/images/marker/hc_033_icon.png'); }
+.hc_033-icon:hover { background-image: url('src/assets/images/marker/hc_033_icon_hover.png'); }
+.hc_033-icon:active { background-image: url('src/assets/images/marker/hc_033_icon_push.png'); }
+.hc_034-icon { background-image: url('src/assets/images/marker/hc_034_icon.png'); }
+.hc_034-icon:hover { background-image: url('src/assets/images/marker/hc_034_icon_hover.png'); }
+.hc_034-icon:active { background-image: url('src/assets/images/marker/hc_034_icon_push.png'); }
+.hc_035-icon { background-image: url('src/assets/images/marker/hc_035_icon.png'); }
+.hc_035-icon:hover { background-image: url('src/assets/images/marker/hc_035_icon_hover.png'); }
+.hc_035-icon:active { background-image: url('src/assets/images/marker/hc_035_icon_push.png'); }
+.hc_036-icon { background-image: url('src/assets/images/marker/hc_036_icon.png'); }
+.hc_036-icon:hover { background-image: url('src/assets/images/marker/hc_036_icon_hover.png'); }
+.hc_036-icon:active { background-image: url('src/assets/images/marker/hc_036_icon_push.png'); }
+.hc_037-icon { background-image: url('src/assets/images/marker/hc_037_icon.png'); }
+.hc_037-icon:hover { background-image: url('src/assets/images/marker/hc_037_icon_hover.png'); }
+.hc_037-icon:active { background-image: url('src/assets/images/marker/hc_037_icon_push.png'); }
+.hc_044-icon { background-image: url('src/assets/images/marker/hc_044_icon.png'); }
+.hc_044-icon:hover { background-image: url('src/assets/images/marker/hc_044_icon_hover.png'); }
+.hc_044-icon:active { background-image: url('src/assets/images/marker/hc_044_icon_push.png'); }
+
+.fish_017_001-icon { background-image: url('src/assets/images/marker/fish_017_001_icon.png'); }
+.fish_017_001-icon:hover { background-image: url('src/assets/images/marker/fish_017_001_icon_hover.png'); }
+.fish_017_001-icon:active { background-image: url('src/assets/images/marker/fish_017_001_icon_push.png'); }
+.fish_017_002-icon { background-image: url('src/assets/images/marker/fish_017_002_icon.png'); }
+.fish_017_002-icon:hover { background-image: url('src/assets/images/marker/fish_017_002_icon_hover.png'); }
+.fish_017_002-icon:active { background-image: url('src/assets/images/marker/fish_017_002_icon_push.png'); }
+.fish_018_001-icon { background-image: url('src/assets/images/marker/fish_018_001_icon.png'); }
+.fish_018_001-icon:hover { background-image: url('src/assets/images/marker/fish_018_001_icon_hover.png'); }
+.fish_018_001-icon:active { background-image: url('src/assets/images/marker/fish_018_001_icon_push.png'); }
+.fish_019_001-icon { background-image: url('src/assets/images/marker/fish_019_001_icon.png'); }
+.fish_019_001-icon:hover { background-image: url('src/assets/images/marker/fish_019_001_icon_hover.png'); }
+.fish_019_001-icon:active { background-image: url('src/assets/images/marker/fish_019_001_icon_push.png'); }
+.fish_020_001-icon { background-image: url('src/assets/images/marker/fish_020_001_icon.png'); }
+.fish_020_001-icon:hover { background-image: url('src/assets/images/marker/fish_020_001_icon_hover.png'); }
+.fish_020_001-icon:active { background-image: url('src/assets/images/marker/fish_020_001_icon_push.png'); }
+.fish_021_001-icon { background-image: url('src/assets/images/marker/fish_021_001_icon.png'); }
+.fish_021_001-icon:hover { background-image: url('src/assets/images/marker/fish_021_001_icon_hover.png'); }
+.fish_021_001-icon:active { background-image: url('src/assets/images/marker/fish_021_001_icon_push.png'); }
+.fish_022_001-icon { background-image: url('src/assets/images/marker/fish_022_001_icon.png'); }
+.fish_022_001-icon:hover { background-image: url('src/assets/images/marker/fish_022_001_icon_hover.png'); }
+.fish_022_001-icon:active { background-image: url('src/assets/images/marker/fish_022_001_icon_push.png'); }
+.fish_023_001-icon { background-image: url('src/assets/images/marker/fish_023_001_icon.png'); }
+.fish_023_001-icon:hover { background-image: url('src/assets/images/marker/fish_023_001_icon_hover.png'); }
+.fish_023_001-icon:active { background-image: url('src/assets/images/marker/fish_023_001_icon_push.png'); }
+.fish_024_001-icon { background-image: url('src/assets/images/marker/fish_024_001_icon.png'); }
+.fish_024_001-icon:hover { background-image: url('src/assets/images/marker/fish_024_001_icon_hover.png'); }
+.fish_024_001-icon:active { background-image: url('src/assets/images/marker/fish_024_001_icon_push.png'); }
+.fish_025_001-icon { background-image: url('src/assets/images/marker/fish_025_001_icon.png'); }
+.fish_025_001-icon:hover { background-image: url('src/assets/images/marker/fish_025_001_icon_hover.png'); }
+.fish_025_001-icon:active { background-image: url('src/assets/images/marker/fish_025_001_icon_push.png'); }
+.fish_026_001-icon { background-image: url('src/assets/images/marker/fish_026_001_icon.png'); }
+.fish_026_001-icon:hover { background-image: url('src/assets/images/marker/fish_026_001_icon_hover.png'); }
+.fish_026_001-icon:active { background-image: url('src/assets/images/marker/fish_026_001_icon_push.png'); }
+.fish_027_001-icon { background-image: url('src/assets/images/marker/fish_027_001_icon.png'); }
+.fish_027_001-icon:hover { background-image: url('src/assets/images/marker/fish_027_001_icon_hover.png'); }
+.fish_027_001-icon:active { background-image: url('src/assets/images/marker/fish_027_001_icon_push.png'); }
+.fish_028_001-icon { background-image: url('src/assets/images/marker/fish_028_001_icon.png'); }
+.fish_028_001-icon:hover { background-image: url('src/assets/images/marker/fish_028_001_icon_hover.png'); }
+.fish_028_001-icon:active { background-image: url('src/assets/images/marker/fish_028_001_icon_push.png'); }
+.fish_029_001-icon { background-image: url('src/assets/images/marker/fish_029_001_icon.png'); }
+.fish_029_001-icon:hover { background-image: url('src/assets/images/marker/fish_029_001_icon_hover.png'); }
+.fish_029_001-icon:active { background-image: url('src/assets/images/marker/fish_029_001_icon_push.png'); }
+.fish_030_001-icon { background-image: url('src/assets/images/marker/fish_030_001_icon.png'); }
+.fish_030_001-icon:hover { background-image: url('src/assets/images/marker/fish_030_001_icon_hover.png'); }
+.fish_030_001-icon:active { background-image: url('src/assets/images/marker/fish_030_001_icon_push.png'); }
+.fish_031_001-icon { background-image: url('src/assets/images/marker/fish_031_001_icon.png'); }
+.fish_031_001-icon:hover { background-image: url('src/assets/images/marker/fish_031_001_icon_hover.png'); }
+.fish_031_001-icon:active { background-image: url('src/assets/images/marker/fish_031_001_icon_push.png'); }
+.fish_032_001-icon { background-image: url('src/assets/images/marker/fish_032_001_icon.png'); }
+.fish_032_001-icon:hover { background-image: url('src/assets/images/marker/fish_032_001_icon_hover.png'); }
+.fish_032_001-icon:active { background-image: url('src/assets/images/marker/fish_032_001_icon_push.png'); }
+.fish_033_001-icon { background-image: url('src/assets/images/marker/fish_033_001_icon.png'); }
+.fish_033_001-icon:hover { background-image: url('src/assets/images/marker/fish_033_001_icon_hover.png'); }
+.fish_033_001-icon:active { background-image: url('src/assets/images/marker/fish_033_001_icon_push.png'); }
+.fish_034_001-icon { background-image: url('src/assets/images/marker/fish_034_001_icon.png'); }
+.fish_034_001-icon:hover { background-image: url('src/assets/images/marker/fish_034_001_icon_hover.png'); }
+.fish_034_001-icon:active { background-image: url('src/assets/images/marker/fish_034_001_icon_push.png'); }
+.fish_035_001-icon { background-image: url('src/assets/images/marker/fish_035_001_icon.png'); }
+.fish_035_001-icon:hover { background-image: url('src/assets/images/marker/fish_035_001_icon_hover.png'); }
+.fish_035_001-icon:active { background-image: url('src/assets/images/marker/fish_035_001_icon_push.png'); }
+
+
+.baxian_plateau, .changfu_garden, .changhe_mountain, .chanquan_bridge_cloudy, .cloudrise, .district_of_changan,
+.district_of_jiangdu, .dragonstar_district, .fifty_islands_of_chuyun, .floral_palace, .heavenly_ridge,
+.huaixiu_village, .realm_of_light, .shanghuai_grassland, .taihua_mountain, .valley_of_echoing_blades,
+.way_of_a_hundred_grasses, .weichuan_highlands, .wild_wolf_plateau, .zhongnan_foothills {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 100%;
+
+  position: relative;
+  margin: 0 auto;
+}
+
+.baxian_plateau { background-image: url("src/assets/images/cities/s26_Normal.png"); }
+.baxian_plateau:hover { background-image: url("src/assets/images/cities/s26_Hover.png"); }
+.baxian_plateau:active { background-image: url("src/assets/images/cities/s26_Push.png"); }
+.changfu_garden { background-image: url("src/assets/images/cities/s23_Normal.png"); }
+.changfu_garden:hover { background-image: url("src/assets/images/cities/s23_Hover.png"); }
+.changfu_garden:active { background-image: url("src/assets/images/cities/s23_Push.png"); }
+.changhe_mountain { background-image: url("src/assets/images/cities/m56_Normal.png"); }
+.changhe_mountain:hover { background-image: url("src/assets/images/cities/m56_Hover.png"); }
+.changhe_mountain:active { background-image: url("src/assets/images/cities/m56_Push.png"); }
+.chanquan_bridge_cloudy { background-image: url("src/assets/images/cities/d47_Normal.png"); }
+.chanquan_bridge_cloudy:hover { background-image: url("src/assets/images/cities/d47_Hover.png"); }
+.chanquan_bridge_cloudy:active { background-image: url("src/assets/images/cities/d47_Push.png");}
+.cloudrise { background-image: url("src/assets/images/cities/m35_Normal.png"); }
+.cloudrise:hover { background-image: url("src/assets/images/cities/m35_Hover.png"); }
+.cloudrise:active { background-image: url("src/assets/images/cities/m35_Push.png"); }
+.district_of_changan { background-image: url("src/assets/images/cities/m33_Normal.png"); }
+.district_of_changan:hover { background-image: url("src/assets/images/cities/m33_Hover.png"); }
+.district_of_changan:active { background-image: url("src/assets/images/cities/m33_Push.png"); }
+.district_of_jiangdu { background-image: url("src/assets/images/cities/m34_Normal.png"); }
+.district_of_jiangdu:hover { background-image: url("src/assets/images/cities/m34_Hover.png"); }
+.district_of_jiangdu:active { background-image: url("src/assets/images/cities/m34_Push.png"); }
+.dragonstar_district { background-image: url("src/assets/images/cities/m100_Normal.png"); }
+.dragonstar_district:hover { background-image: url("src/assets/images/cities/m100_Hover.png"); }
+.dragonstar_district:active { background-image: url("src/assets/images/cities/m100_Push.png"); }
+.fifty_islands_of_chuyun { background-image: url("src/assets/images/cities/s34_Normal.png"); }
+.fifty_islands_of_chuyun:hover { background-image: url("src/assets/images/cities/s34_Hover.png"); }
+.fifty_islands_of_chuyun:active { background-image: url("src/assets/images/cities/s34_Push.png"); }
+.floral_palace { background-image: url("src/assets/images/cities/m60_Normal.png"); }
+.floral_palace:hover { background-image: url("src/assets/images/cities/m60_Hover.png"); }
+.floral_palace:active { background-image: url("src/assets/images/cities/m60_Push.png"); }
+.heavenly_ridge { background-image: url("src/assets/images/cities/m14_Normal.png"); }
+.heavenly_ridge:hover { background-image: url("src/assets/images/cities/m14_Hover.png"); }
+.heavenly_ridge:active { background-image: url("src/assets/images/cities/m14_Push.png"); }
+.huaixiu_village { background-image: url("src/assets/images/cities/s21_Normal.png"); }
+.huaixiu_village:hover { background-image: url("src/assets/images/cities/s21_Hover.png"); }
+.huaixiu_village:active { background-image: url("src/assets/images/cities/s21_Push.png"); }
+.realm_of_light { background-image: url("src/assets/images/cities/m01_Normal.png"); }
+.realm_of_light:hover { background-image: url("src/assets/images/cities/m01_Hover.png"); }
+.realm_of_light:active { background-image: url("src/assets/images/cities/m01_Push.png"); }
+.shanghuai_grassland { background-image: url("src/assets/images/cities/m59_Normal.png"); }
+.shanghuai_grassland:hover { background-image: url("src/assets/images/cities/m59_Hover.png"); }
+.shanghuai_grassland:active { background-image: url("src/assets/images/cities/m59_Push.png"); }
+.taihua_mountain { background-image: url("src/assets/images/cities/g04_Normal.png"); }
+.taihua_mountain:hover { background-image: url("src/assets/images/cities/g04_Hover.png"); }
+.taihua_mountain:active { background-image: url("src/assets/images/cities/g04_Push.png"); }
+.valley_of_echoing_blades { background-image: url("src/assets/images/cities/b06_Normal.png"); }
+.valley_of_echoing_blades:hover { background-image: url("src/assets/images/cities/b06_Hover.png"); }
+.valley_of_echoing_blades:active { background-image: url("src/assets/images/cities/b06_Push.png"); }
+.way_of_a_hundred_grasses { background-image: url("src/assets/images/cities/m13_Normal.png"); }
+.way_of_a_hundred_grasses:hover { background-image: url("src/assets/images/cities/m13_Hover.png"); }
+.way_of_a_hundred_grasses:active { background-image: url("src/assets/images/cities/m13_Push.png"); }
+.weichuan_highlands { background-image: url("src/assets/images/cities/m58_Normal.png"); }
+.weichuan_highlands:hover { background-image: url("src/assets/images/cities/m58_Hover.png"); }
+.weichuan_highlands:active { background-image: url("src/assets/images/cities/m58_Push.png"); }
+.wild_wolf_plateau { background-image: url("src/assets/images/cities/m45_Normal.png"); }
+.wild_wolf_plateau:hover { background-image: url("src/assets/images/cities/m45_Hover.png"); }
+.wild_wolf_plateau:active { background-image: url("src/assets/images/cities/m45_Push.png"); }
+.zhongnan_foothills { background-image: url("src/assets/images/cities/m57_Normal.png"); }
+.zhongnan_foothills:hover { background-image: url("src/assets/images/cities/m57_Hover.png"); }
+.zhongnan_foothills:active { background-image: url("src/assets/images/cities/m57_Push.png"); }
+
+.BTL, .CXXZ, .GYBZY, .HSYJ, .JLT, .LHT, .TMS, .THS {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 100%;
+
+  position: relative;
+  margin: 0 auto;
+}
+
+.BTL { background-image: url("src/assets/images/cities/BTL_Normal.png"); }
+.BTL:hover { background-image: url("src/assets/images/cities/BTL_Hover.png"); }
+.BTL:active { background-image: url("src/assets/images/cities/BTL_Push.png"); }
+.CXXZ { background-image: url("src/assets/images/cities/CXXZ_Normal.png"); }
+.CXXZ:hover { background-image: url("src/assets/images/cities/CXXZ_Hover.png"); }
+.CXXZ:active { background-image: url("src/assets/images/cities/CXXZ_Push.png"); }
+.GYBZY { background-image: url("src/assets/images/cities/GYBZY_Normal.png"); }
+.GYBZY:hover { background-image: url("src/assets/images/cities/GYBZY_Hover.png"); }
+.GYBZY:active { background-image: url("src/assets/images/cities/GYBZY_Push.png"); }
+.HSYJ { background-image: url("src/assets/images/cities/HSYJ_Normal.png"); }
+.HSYJ:hover { background-image: url("src/assets/images/cities/HSYJ_Hover.png"); }
+.HSYJ:active { background-image: url("src/assets/images/cities/HSYJ_Push.png"); }
+.JLT { background-image: url("src/assets/images/cities/JLT_Normal.png"); }
+.JLT:hover { background-image: url("src/assets/images/cities/JLT_Hover.png"); }
+.JLT:active { background-image: url("src/assets/images/cities/JLT_Push.png"); }
+.LHT { background-image: url("src/assets/images/cities/LHT_Normal.png"); }
+.LHT:hover { background-image: url("src/assets/images/cities/LHT_Hover.png"); }
+.LHT:active { background-image: url("src/assets/images/cities/LHT_Push.png"); }
+.TMS { background-image: url("src/assets/images/cities/TMS_Normal.png"); }
+.TMS:hover { background-image: url("src/assets/images/cities/TMS_Hover.png"); }
+.TMS:active { background-image: url("src/assets/images/cities/TMS_Push.png"); }
+.THS { background-image: url("src/assets/images/cities/THS_Normal.png"); }
+.THS:hover { background-image: url("src/assets/images/cities/THS_Hover.png"); }
+.THS:active { background-image: url("src/assets/images/cities/THS_Push.png"); }
+
+.ZY, .ZX, .ZF, .YJ, .YF, .TG, .SM, .MF, .LY {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+  margin: 0 auto;
+}
+
+.ZY { background-image: url("src/assets/images/cities/Button_ZY_Normal.png"); }
+.ZY:hover { background-image: url("src/assets/images/cities/Button_ZY_Hover.png"); }
+.ZY:active { background-image: url("src/assets/images/cities/Button_ZY_Push.png"); }
+.ZX { background-image: url("src/assets/images/cities/Button_ZX_Normal.png"); }
+.ZX:hover { background-image: url("src/assets/images/cities/Button_ZX_Hover.png"); }
+.ZX:active { background-image: url("src/assets/images/cities/Button_ZX_Push.png"); }
+.ZF { background-image: url("src/assets/images/cities/Button_ZF_Normal.png"); }
+.ZF:hover { background-image: url("src/assets/images/cities/Button_ZF_Hover.png"); }
+.ZF:active { background-image: url("src/assets/images/cities/Button_ZF_Push.png"); }
+.YJ { background-image: url("src/assets/images/cities/Button_YJ_Normal.png"); }
+.YJ:hover { background-image: url("src/assets/images/cities/Button_YJ_Hover.png"); }
+.YJ:active { background-image: url("src/assets/images/cities/Button_YJ_Push.png"); }
+.YF { background-image: url("src/assets/images/cities/Button_YF_Normal.png"); }
+.YF:hover { background-image: url("src/assets/images/cities/Button_YF_Hover.png"); }
+.YF:active { background-image: url("src/assets/images/cities/Button_YF_Push.png"); }
+.TG { background-image: url("src/assets/images/cities/Button_TG_Normal.png"); }
+.TG:hover { background-image: url("src/assets/images/cities/Button_TG_Hover.png"); }
+.TG:active { background-image: url("src/assets/images/cities/Button_TG_Push.png"); }
+.SM { background-image: url("src/assets/images/cities/Button_SM_Normal.png"); }
+.SM:hover { background-image: url("src/assets/images/cities/Button_SM_Hover.png"); }
+.SM:active { background-image: url("src/assets/images/cities/Button_SM_Push.png"); }
+.MF { background-image: url("src/assets/images/cities/Button_MF_Normal.png"); }
+.MF:hover { background-image: url("src/assets/images/cities/Button_MF_Hover.png"); }
+.MF:active { background-image: url("src/assets/images/cities/Button_MF_Push.png"); }
+.LY { background-image: url("src/assets/images/cities/Button_LY_Normal.png"); }
+.LY:hover { background-image: url("src/assets/images/cities/Button_LY_Hover.png"); }
+.LY:active { background-image: url("src/assets/images/cities/Button_LY_Push.png"); }
